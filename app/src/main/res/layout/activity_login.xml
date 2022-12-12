@@ -51,18 +51,20 @@
             android:id="@+id/btn1"
             android:layout_width="360dp"
             android:layout_height="70dp"
-            android:textSize="12pt"
-            android:text="Login"
             android:layout_marginTop="10dp"
-            android:backgroundTint="@color/teal_700"/>
+            android:backgroundTint="@color/teal_700"
+            android:onClick="fazLogin"
+            android:text="Login"
+            android:textSize="12pt" />
 
         <Button
             android:id="@+id/btn2"
             android:layout_width="360dp"
             android:layout_height="70dp"
-            android:textSize="12pt"
-            android:text="Criar Conta"
             android:layout_marginTop="120dp"
-            android:backgroundTint="@color/teal_700"/>
+            android:backgroundTint="@color/teal_700"
+            android:onClick="fazRegistro"
+            android:text="Criar Conta"
+            android:textSize="12pt" />
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
