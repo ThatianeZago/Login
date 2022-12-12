@@ -22,7 +22,6 @@ public class DBHelper extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase sqLiteDatabase) {
-        //variavel i é do que? e de onde?
         for(int i=0; i<sql.length; i++){
             sqLiteDatabase.execSQL(sql[i]);
         }
