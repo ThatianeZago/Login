@@ -41,7 +41,6 @@ public class DBHelper extends SQLiteOpenHelper {
         cv.put("password", senha);
         return db.insert("utilizador", null, cv);
     }
-
     //VERIFICA LOGIN
     public int verificaLogin(String log, String senha) {
             SQLiteDatabase db = getReadableDatabase();
@@ -52,4 +51,9 @@ public class DBHelper extends SQLiteOpenHelper {
             }
             return -1;
         }
+    //DELETAR UTILIZADORES
+    public long eliminaUtilizador(int id){
+        SQLiteDatabase db = getWritableDatabase();
+        return db.delete("utilizador", "id=?", new String[]String.valueOf(id));
     }
+}
