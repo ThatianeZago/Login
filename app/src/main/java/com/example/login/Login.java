@@ -32,13 +32,11 @@ public class Login extends AppCompatActivity {
             }
             else{
                 //FAZER VALIDAÇÃO NA BASE DE DADOS
+                db = new DBHelper(this);
+                if(db.verificaLogin(log,senha)>0){
+                    i = new Intent(Login.this,MostraUtilizadores.class);
+                    startActivity(i);
+                }
             }
         }
-
-    public void fazRegistro(View v){
-        i = new Intent(Login.this,Registro.class);
-        startActivity(i);
-        finish();
-    }
-
 }
