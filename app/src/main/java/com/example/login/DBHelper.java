@@ -54,6 +54,6 @@ public class DBHelper extends SQLiteOpenHelper {
     //DELETAR UTILIZADORES
     public long eliminaUtilizador(int id){
         SQLiteDatabase db = getWritableDatabase();
-        return db.delete("utilizador", "id=?", new String[]String.valueOf(id));
+        return db.delete("utilizador", "id=?", new String[]{String.valueOf(id)});
     }
 }

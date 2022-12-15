@@ -35,6 +35,7 @@ public class Login extends AppCompatActivity {
                 db = new DBHelper(this);
                 if(db.verificaLogin(log,senha)>0){
                     i = new Intent(Login.this,MostraUtilizadores.class);
+                    i.putExtra("id",db.verificaLogin(log,senha));
                     startActivity(i);
                 }
             }

@@ -16,7 +16,7 @@ public class MostraUtilizadores extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_mostra_utilizadores);
         it = getIntent();
-        id = it.getExtras().get("id");
+        id = it.getExtras().getInt("id");
     }
 
     public void elimina(View v){
