@@ -47,7 +47,8 @@ public class DBHelper extends SQLiteOpenHelper {
             Cursor c = db.rawQuery("SELECT * FROM utilizador WHERE login = ? and password = ?", new String[]{log, senha});
             c.moveToFirst();
             if (c.getCount() == 1) {
-                return c.getInt(c.getColumnIndex("id"));
+                int res = c.getInt(c.getColumnIndex("id"));
+                return res;
             }
             return -1;
         }
@@ -55,5 +56,19 @@ public class DBHelper extends SQLiteOpenHelper {
     public long eliminaUtilizador(int id){
         SQLiteDatabase db = getWritableDatabase();
         return db.delete("utilizador", "id=?", new String[]{String.valueOf(id)});
+    }
+
+    public String[] editarDados(int id){
+        SQLiteDatabase db = getReadableDatabase();
+        Cursor c = db.rawQuery("SELECT * FROM utilizador WHERE id = ?", new String[]{String.valueOf(id)});
+        c.moveToFirst();
+        String valores[] = new String[3];
+        if(c.getCount()==1){
+            valores[0] = c.getString(c.getColumnIndex("login"));
+            valores[1] = c.getString(c.getColumnIndex("email"));
+            valores[2] = c.getString(c.getColumnIndex("password"));
+            return valores;
+        }
+        return null;
     }
 }

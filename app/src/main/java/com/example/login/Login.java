@@ -33,7 +33,10 @@ public class Login extends AppCompatActivity {
             else{
                 //FAZER VALIDAÇÃO NA BASE DE DADOS
                 db = new DBHelper(this);
-                if(db.verificaLogin(log,senha)>0){
+                int res = db.verificaLogin(log,senha);
+
+                if(res != -1){
+                    //Toast.makeText(this, "1", Toast.LENGTH_SHORT).show();
                     i = new Intent(Login.this,MostraUtilizadores.class);
                     i.putExtra("id",db.verificaLogin(log,senha));
                     startActivity(i);

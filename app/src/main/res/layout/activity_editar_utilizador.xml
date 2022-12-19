@@ -6,4 +6,103 @@
     android:layout_height="match_parent"
     tools:context=".EditarUtilizador">
 
+    <LinearLayout
+        android:id="@+id/elinearLayout"
+        android:layout_width="360dp"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/eregistotxt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:text="Atualiza dados de Utilizador"
+            android:textAlignment="center"
+            android:textSize="20pt" />
+
+        <EditText
+            android:id="@+id/eregistoctxlogin"
+            android:layout_width="360dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/custom_edit"
+            android:drawableStart="@drawable/ic_baseline_account_circle_24"
+            android:drawablePadding="10dp"
+            android:ems="10"
+            android:hint="Insira o seu login"
+            android:inputType="textPersonName"
+            android:paddingStart="20dp"
+            android:textSize="20dp" />
+
+        <EditText
+            android:id="@+id/eregistoctxemail"
+            android:layout_width="360dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/custom_edit"
+            android:drawableStart="@drawable/ic_baseline_email_24"
+            android:drawablePadding="10dp"
+            android:ems="10"
+            android:hint="Insira o seu email"
+            android:inputType="textPersonName"
+            android:paddingStart="20dp"
+            android:textSize="20dp" />
+
+        <EditText
+            android:id="@+id/eregistoctxpass"
+            android:layout_width="360dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/custom_edit"
+            android:drawableStart="@drawable/ic_baseline_key_24"
+            android:drawablePadding="10dp"
+            android:ems="10"
+            android:hint="Insira a sua senha"
+            android:inputType="textPassword"
+            android:paddingStart="20dp"
+            android:textSize="20dp" />
+
+        <EditText
+            android:id="@+id/eregistoctxrepass"
+            android:layout_width="360dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/custom_edit"
+            android:drawableStart="@drawable/ic_baseline_key_24"
+            android:drawablePadding="10dp"
+            android:ems="10"
+            android:hint="Reescreva a sua senha"
+            android:inputType="textPassword"
+            android:paddingStart="20dp"
+            android:textSize="20dp" />
+
+        <Button
+            android:id="@+id/ebt3"
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:layout_marginTop="20dp"
+            android:backgroundTint="@color/teal_700"
+
+            android:text="Atualizar"
+            android:textSize="12pt"
+            app:cornerRadius="20dp" />
+
+        <Button
+            android:id="@+id/ebt4"
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:layout_marginTop="20dp"
+            android:backgroundTint="@color/teal_700"
+            android:onClick="voltar"
+            android:text="Voltar"
+            android:textSize="10pt"
+            app:cornerRadius="20dp" />
+    </LinearLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

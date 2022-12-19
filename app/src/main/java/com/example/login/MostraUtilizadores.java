@@ -17,8 +17,14 @@ public class MostraUtilizadores extends AppCompatActivity {
         setContentView(R.layout.activity_mostra_utilizadores);
         it = getIntent();
         id = it.getExtras().getInt("id");
+        //Toast.makeText(this, "1", Toast.LENGTH_SHORT).show();
     }
-
+    public void editarDados(View v){
+        it = new Intent(MostraUtilizadores.this,EditarUtilizador.class);
+        it.putExtra("id",id);
+        startActivity(it);
+        finish();
+    }
     public void elimina(View v){
         db = new DBHelper(this);
         long res = db.eliminaUtilizador(id);
