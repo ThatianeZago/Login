@@ -89,6 +89,7 @@
             android:layout_marginTop="20dp"
             android:backgroundTint="@color/teal_700"
 
+            android:onClick="atualizaDados"
             android:text="Atualizar"
             android:textSize="12pt"
             app:cornerRadius="20dp" />

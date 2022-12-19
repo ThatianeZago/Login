@@ -71,4 +71,13 @@ public class DBHelper extends SQLiteOpenHelper {
         }
         return null;
     }
+
+    public int atualizaDados(int id, String login, String email, String password) {
+        SQLiteDatabase db = getWritableDatabase();
+        ContentValues cv = new ContentValues();
+        cv.put("login",login);
+        cv.put("email",email);
+        cv.put("password",password);
+        return db.update("utilizador",cv, "id=?",new String[]{String.valueOf(id)});
+    }
 }

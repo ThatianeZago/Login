@@ -37,10 +37,23 @@ public class EditarUtilizador extends AppCompatActivity {
         etemail.setText(valores[1]);
         etrepass.setText(valores[2]);
         etrepass.setText(valores[2]);
-        //Cursor c = db.editarDados(id);
-        //etlogin.setText(c.getColumnIndex("Login"));
-        //etemail.setText(c.getColumnIndex("email"));
-        //etpassword.setText(c.getColumnIndex("password"));
-        //etrepass.setText("password");
+    }
+    public void atualizaDados(View v){
+        db = new DBHelper(this);
+        String login = etlogin.getText().toString();
+        String email = etemail.getText().toString();
+        String password = etpassword.getText().toString();
+
+        if(db.atualizaDados(id,login,email,password)>0){
+            Toast.makeText(this, "Atualizado com sucesso", Toast.LENGTH_SHORT).show();
+        } else{
+            Toast.makeText(this, "Não foi possivel as alterações. Tente mais tarde", Toast.LENGTH_SHORT).show();
+        }
+    }
+    public void voltar(View v){
+        it = new Intent(EditarUtilizador.this,MostraUtilizadores.class);
+        it.putExtra("id",id);
+        startActivity(it);
+        finish();
     }
 }
